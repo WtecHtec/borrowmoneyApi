@@ -9,9 +9,9 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   datasource:
-    password: 'qwer.8748!'
+    password: 'qwer8748'
     driver-class-name: com.mysql.jdbc.Driver
-    url: "jdbc:mysql://101.200.158.40:3306/borrowmoney?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true"
+    url: "jdbc:mysql://localhost:3306/borrowmoney?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true"
     username: root
   server:
     port: 8200
