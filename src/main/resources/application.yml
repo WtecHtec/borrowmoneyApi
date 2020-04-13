@@ -1,0 +1,48 @@
+#激活哪一个环境的配置文件
+#公共配置
+spring:
+  profiles:
+    active: dev
+  application:
+    name: backservice
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    password: 'qwer.8748!'
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://101.200.158.40:3306/borrowmoney?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true"
+    username: root
+  server:
+    port: 8200
+    connectionTimeout: 10000
+    maxConnections: 1000
+  http:
+    multipart:
+      maxRequestSize: 1000Mb
+      maxFileSize: 100Mb
+server:
+  port: 8299
+  connection-timeout: 3000
+
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.dao.pojo
+  configuration:
+   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+##jwt配置
+audience:
+  # 代表这个JWT的接收对象,存入audience
+  clientId: 098f6bcd4621d373cade4e832627b4f6
+  # 密钥, 经过Base64加密, 可自行替换
+  base64Secret: MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=
+  # JWT的签发主体，存入issuer
+  name: restapiuser
+  # 过期时间，时间戳
+  expiresSecond: 7200000
+
+logging:
+  config: classpath:logback.xml
